@@ -16,28 +16,22 @@
     <p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
 
     <section class="features">
-      <article>
-        <a href="#" class="image">
-          <!-- Learn how to use images here: https://gridsome.org/docs/images -->
-          <g-image alt="Example image" src="../assets/images/pic04.jpg"/>
-        </a>
-        <h3 class="major">Sed feugiat lorem</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-        <a href="#" class="special">Learn more</a>
-      </article>
-      <article>
-        <a href="#" class="image">
-          <!-- Learn how to use images here: https://gridsome.org/docs/images -->
-          <g-image alt="Example image" src="../assets/images/pic05.jpg"/>
-        </a>
-        <h3 class="major">Nisl placerat</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-        <a href="#" class="special">Learn more</a>
-      </article>
+      <Feature
+        title="Feature Component"
+        subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices."
+        link="#"
+        img="/images/pic04.jpg"
+      />
+      <Feature
+        title="Second Feature"
+        subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices."
+        link="#"
+        img="/images/pic05.jpg"
+      />
     </section>
 
     <hr>
-    <p>Example of fetching JSON data from and API</p>
+    <h3>Example of fetching JSON data from and API</h3>
     <div v-for="edge in $page.jokes.edges" :key="edge.node.id">
       {{ edge.node.title }}
       <g-link :to="edge.node.path">Read more</g-link>
@@ -73,10 +67,12 @@ query Jokes ($page: Int) {
 
 <script>
 import { Pager } from "gridsome";
+import Feature from "~/components/Feature.vue";
 
 export default {
   components: {
-    Pager
+    Pager,
+    Feature
   },
   metaInfo: {
     title: "Hello, world!"
