@@ -3,8 +3,9 @@
     <template slot="header">
       <Hero :title="$page.joke.title"/>
     </template>
-    <div class="joke">
+    <div class="joke inner">
       <div v-html="$page.joke.content"></div>
+      <p>source: https://api.chucknorris.io/{{$page.joke.title.replace("Joke ", "jokes/")}}</p>
     </div>
   </Layout>
 </template>

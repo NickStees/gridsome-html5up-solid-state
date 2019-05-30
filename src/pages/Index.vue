@@ -1,44 +1,90 @@
 <template>
   <Layout>
     <template slot="header">
-      <Hero
-        title="Hello, world!"
-        subtitle="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur excepturi labore tempore expedita, et iste tenetur suscipit explicabo! Dolores, aperiam non officia eos quod asperiores"
-      />
+      <section id="banner">
+        <div class="inner">
+          <div class="logo">
+            <span class="icon fa-diamond"></span>
+          </div>
+        </div>
+        <Hero
+          title="Hello, world!"
+          subtitle="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur excepturi labore tempore expedita, et iste tenetur suscipit explicabo! Dolores, aperiam non officia eos quod asperiores"
+        />
+      </section>
     </template>
 
-    <h3 class="major">Lorem ipsum dolor</h3>
-    <p>Morbi mattis mi consectetur tortor elementum, varius pellentesque velit convallis. Aenean tincidunt lectus auctor mauris maximus, ac scelerisque ipsum tempor. Duis vulputate ex et ex tincidunt, quis lacinia velit aliquet. Duis non efficitur nisi, id malesuada justo. Maecenas sagittis felis ac sagittis semper. Curabitur purus leo donec vel dolor at arcu tincidunt bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce ut aliquet justo. Donec id neque ipsum. Integer eget ultricies odio. Nam vel ex a orci fringilla tincidunt. Aliquam eleifend ligula non velit accumsan cursus. Etiam ut gravida sapien.</p>
-
-    <p>Vestibulum ultrices risus velit, sit amet blandit massa auctor sit amet. Sed eu lectus sem. Phasellus in odio at ipsum porttitor mollis id vel diam. Praesent sit amet posuere risus, eu faucibus lectus. Vivamus ex ligula, tempus pulvinar ipsum in, auctor porta quam. Proin nec commodo, vel scelerisque nisi scelerisque. Suspendisse id quam vel tortor tincidunt suscipit. Nullam auctor orci eu dolor consectetur, interdum ullamcorper ante tincidunt. Mauris felis nec felis elementum varius.</p>
-
-    <h3 class="major">Vitae phasellus</h3>
-    <p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
-
-    <section class="features">
-      <Feature
-        title="Feature Component"
-        subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices."
-        link="#"
-        img="/images/pic04.jpg"
-      />
-      <Feature
-        title="Second Feature"
-        subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices."
-        link="#"
-        img="/images/pic05.jpg"
-      />
+    <!-- One -->
+    <section id="one" class="wrapper spotlight style1">
+      <div class="inner">
+        <a href="#" class="image">
+          <img src="images/pic01.jpg" alt>
+        </a>
+        <div class="content">
+          <h2 class="major">Magna arcu feugiat</h2>
+          <p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
+          <a href="#" class="special">Learn more</a>
+        </div>
+      </div>
     </section>
 
-    <hr>
-    <h3>Example of fetching JSON data from and API</h3>
-    <div v-for="edge in $page.jokes.edges" :key="edge.node.id">
-      {{ edge.node.title }}
-      <g-link :to="edge.node.path">Read more</g-link>
+    <!-- Two -->
+    <section id="two" class="wrapper alt spotlight style2">
+      <div class="inner">
+        <a href="#" class="image">
+          <img src="images/pic02.jpg" alt>
+        </a>
+        <div class="content">
+          <h2 class="major">Tempus adipiscing</h2>
+          <p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
+          <a href="#" class="special">Learn more</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Three -->
+    <section id="three" class="wrapper spotlight style3">
+      <div class="inner">
+        <a href="#" class="image">
+          <img src="images/pic03.jpg" alt>
+        </a>
+        <div class="content">
+          <h2 class="major">Nullam dignissim</h2>
+          <p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
+          <a href="#" class="special">Learn more</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="inner">
+      <section class="features">
+        <Feature
+          title="Feature Component"
+          subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices."
+          link="#"
+          img="/images/pic04.jpg"
+        />
+        <Feature
+          title="Second Feature"
+          subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices."
+          link="#"
+          img="/images/pic05.jpg"
+        />
+      </section>
+
+      <hr>
+      <h3>Example of fetching JSON data from and API</h3>
+      <ul class="alt">
+        <li v-for="edge in $page.jokes.edges" :key="edge.node.id">
+          {{ edge.node.title }}
+          <g-link :to="edge.node.path" class="button small">Read more</g-link>
+        </li>
+      </ul>
+      <div class="pagination">
+        <Pager :info="$page.jokes.pageInfo"/>
+      </div>
     </div>
-    <div class="pagination">
-      <Pager :info="$page.jokes.pageInfo"/>
-    </div>
+    <!-- end inner -->
 
     <template slot="footer">
       <h2 class="major">Get in touch</h2>

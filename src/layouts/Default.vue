@@ -15,16 +15,14 @@
         <!-- header slot  -->
       </header>
       <div class="wrapper">
-        <div class="inner">
-          <slot/>
-        </div>
+        <slot/>
       </div>
     </section>
-    <section id="footer" v-if="$slots.footer">
+    <footer id="footer" v-if="$slots.footer">
       <div class="inner">
         <slot name="footer"/>
       </div>
-    </section>
+    </footer>
   </div>
 </template>
 
